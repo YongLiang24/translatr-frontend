@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Travel_Translator</title>
+  <title>Travel Translator</title>
 </head>
 <body>
-<form id="planning-form">
+  <form id="user-form">
+    <input type="text" id="user-name" placeholder="Username">
+    <input type="submit" name="Submit" value="Create User">
+  </form>
+  <form id="trip-form">
+    <input type="text" id="trip-name" placeholder="Name of Trip">
+    <input type="submit" name="Submit" value="Create Trip">
+  </form>
+<form id="translate-form">
 <select  id='lang-select' name="language">
   <option value="en">English</option>
   <option value="ru">Russian</option>
   <br>
 </select>
 <br>
-<input type="text" id="translate-text" placeholder="Name">
+<input type="text" id="translate-text" placeholder="Text to Translate">
 <br>
-<input type="submit" name="Submit" value="Submit">
+<input type="submit" name="Submit" value="Translate">
 </form>
 <h4 id= "translation"></h4>
 

@@ -83,8 +83,10 @@ function addTripToList(trip) {
   li.appendChild(deleteButton)
   tripList.appendChild(li)
   deleteButton.addEventListener("click", ()=> {
+    if (confirm('Are you sure you want to delete this trip?')) {
     fetch(baseURL + /trips/ + `${li.getAttribute("trip-id")}`, {
       method: "DELETE"})
       li.remove()
+    }
   })
 }

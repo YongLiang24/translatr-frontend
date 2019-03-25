@@ -1,6 +1,7 @@
 const planningForm = document.getElementById('planning-form');
 const langSelect = document.getElementById('lang-select');
 const translateText = document.getElementById('translate-text')
+const translation = document.getElementById("translation")
 
 planningForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
@@ -15,7 +16,12 @@ planningForm.addEventListener('submit', (ev)=>{
     body: JSON.stringify({
       text: translateText.value,
       language: langSelect.value
-
     })
+  })
+  .then(resp => {
+    return resp.json()
+  })
+  .then(json => {
+    translation.innerText = json.translation
   })
 })

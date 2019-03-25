@@ -8,14 +8,23 @@
   <title>Travel Translator</title>
 </head>
 <body>
+  <div class="sidenav">
+
+    <h2 id="user-display" user-id="0"></h2>
   <form id="user-form">
     <input type="text" id="user-name" placeholder="Username">
-    <input type="submit" name="Submit" value="Create User">
+    <input type="submit" name="Submit" value="Create or Find User">
   </form>
   <form id="trip-form">
     <input type="text" id="trip-name" placeholder="Name of Trip">
     <input type="submit" name="Submit" value="Create Trip">
   </form>
+  <ul id="trip-list">
+
+  </ul>
+</div>
+<main>
+
 <form id="translate-form">
 <select  id='lang-select' name="language">
   <option value="en">English</option>
@@ -27,7 +36,8 @@
 <br>
 <input type="submit" name="Submit" value="Translate">
 </form>
-<h4 id= "translation"></h4>
+<h4 id="translation"></h4>
+</main>
 
   <script src="index.js" defer></script>
 </body>

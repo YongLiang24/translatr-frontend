@@ -8,6 +8,9 @@ const tripForm = document.getElementById('trip-form')
 const tripName = document.getElementById('trip-name')
 const userDisplay = document.getElementById('user-display')
 const tripList = document.getElementById("trip-list")
+const selectedTrip = document.getElementById('selected-list')
+const translationList = document.getElementById("translation-list")
+
 const baseURL = "http://localhost:3000/api/v1"
 
 userForm.addEventListener('submit', (ev)=> {
@@ -70,7 +73,7 @@ translateForm.addEventListener('submit', (ev)=>{
     return resp.json()
   })
   .then(json => {
-    translation.innerText = json.translation
+      createTranslation(json)
   })
 })
 
@@ -82,9 +85,73 @@ function addTripToList(trip) {
   deleteButton.innerText = "Delete"
   li.appendChild(deleteButton)
   tripList.appendChild(li)
+  li.addEventListener("click", ()=> {
+    selectedTrip.innerText = trip.name
+    selectedTrip.setAttribute("trip-id", trip.id)
+    fetch(baseURL + "/trips/" + trip.id,{
+      method: "GET"
+    })
+    .then(resp => resp.json())
+    .then(json => {
+      translationList.innerText = ''
+      for (let i = 0; i < json.translations.length; i++){
+        renderTranslation(json.translations[i])
+      }
+    })
+  })
   deleteButton.addEventListener("click", ()=> {
+    if (confirm('Are you sure you want to delete this trip?')) {
     fetch(baseURL + /trips/ + `${li.getAttribute("trip-id")}`, {
       method: "DELETE"})
       li.remove()
+    }
+  })
+}
+
+function renderTranslation(translation){
+  let li = document.createElement("li")
+  let deleteButton = document.createElement("button")
+  deleteButton.innerText = "Delete Translation"
+  li.setAttribute("translation-id", translation.id)
+  li.innerText = translation.source_text + " - " + translation.output_text
+  li.appendChild(deleteButton)
+  translationList.appendChild(li)
+  deleteButton.addEventListener("click", ()=>{
+    fetch(baseURL + "/translations/" + translation.id , {
+      method: "DELETE"
+    })
+    li.remove()
+  })
+}
+
+function createTranslation(json){
+  let sourceSpan = document.createElement("span")
+  sourceSpan.setAttribute("id", "source")
+  let outputSpan = document.createElement("span")
+  outputSpan.setAttribute("id", "output")
+  let spacingSpan = document.createElement("span")
+  let saveButton = document.createElement("button")
+  saveButton.innerText = "Save Translation to Trip"
+  spacingSpan.innerText = " - "
+  sourceSpan.innerText = translateText.value
+  outputSpan.innerText = json.translation
+  translation.appendChild(sourceSpan)
+  translation.appendChild(spacingSpan)
+  translation.appendChild(outputSpan)
+  translation.appendChild(saveButton)
+  translateText.value = ''
+  saveButton.addEventListener("click", (ev) => {
+    fetch(baseURL + '/trips/' + selectedTrip.getAttribute("trip-id") + "/translations", {
+      method: "POST",
+      headers:{ "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+         source_text: sourceSpan.innerText,
+         output_text: outputSpan.innerText
+      })
+    })
+    .then(resp => resp.json())
+    .then(json => {
+      renderTranslation(json)
+    })
   })
 }

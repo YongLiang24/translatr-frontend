@@ -55,16 +55,7 @@ tripForm.addEventListener('submit', (ev)=> {
 
 translateForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
-<<<<<<< HEAD
-<<<<<<< HEAD
-  //console.log('click');
-  //console.log(langSelect.value)
-=======
->>>>>>> 4a1911542ac5c94ea0bc74153535811bcb7659eb
-  fetch('http://localhost:3000/api/v1/translate', {
-=======
   fetch(baseURL + '/translate', {
->>>>>>> f18833fab8ef309d875035c8ddbae415bf3bb9b9
     method: "POST",
     headers:{
       "Content-Type": "application/json",

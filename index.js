@@ -10,7 +10,7 @@ const userDisplay = document.getElementById('user-display')
 const tripList = document.getElementById("trip-list")
 const selectedTrip = document.getElementById('selected-list')
 const translationList = document.getElementById("translation-list")
-const mainTranslate = document.querySelector('main');
+const mainTranslate = document.getElementById('main');
 const userLogin = document.getElementById('user-login')
 
 const baseURL = "http://localhost:3000/api/v1"
@@ -105,9 +105,11 @@ translateForm.addEventListener('submit', (ev)=>{
 
 function addTripToList(trip) {
   let li = document.createElement("li")
+
   let deleteButton = document.createElement("button")
   let emptySpan = document.createElement("span")
   let tripSpan = document.createElement("span")
+  tripSpan.classList.add('trip-list-item')
   emptySpan.innerText = "  "
   deleteButton.classList.add("btn")
   deleteButton.classList.add("btn-danger")
@@ -119,7 +121,7 @@ function addTripToList(trip) {
   li.appendChild(tripSpan)
   li.appendChild(emptySpan)
   li.appendChild(deleteButton)
-  li.classList.add("trip-list-item")
+  // li.classList.add("trip-list-item")
   tripList.appendChild(li)
   tripSpan.addEventListener("click", ()=> {
     translation.innerText = ''

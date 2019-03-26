@@ -10,12 +10,18 @@
   top: 0; /* Stay at the top */
   left: 0;
   padding-top: 20px;
+  padding-left: 20px;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
 }
-main {
+#main {
   margin-top: 100px;
   margin-left: 300px;
-  max-width: 800px;
+  /* max-width: 800px; */
   padding: 10px;
+  width: 55%;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
 }
 #user-login {
   position: fixed;
@@ -25,6 +31,7 @@ main {
   margin-left: -175px;
   padding: 20px;
   text-align: right;
+  width: 280px;
 /* adds border to box */
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -33,6 +40,7 @@ body {
  background-image: url("https://i.imgur.com/kTHsLi9.jpg");
  background-size: cover;
  height: 100%;
+ width: 100%;
  background-repeat: no-repeat;
 }
 #title {
@@ -45,16 +53,23 @@ body {
   padding-right: 5px;
   text-shadow: 0 0 3px #FF0000;
   box-shadow: 5px 5px 5px grey;
-
+  padding-top: 4px;
+  z-index: 5;
 }
 #trip-list {
   list-style: none;
+
+}
+.trip-list-item:hover {
+  background-color: #00ffff;
   cursor: pointer;
 }
 #about-button {
   max-width: 100px;
   margin-left: 80px;
+  transition: all 0.5s;
 }
+
 #about {
   max-width: 250px;
 }
@@ -64,8 +79,8 @@ bottom: 0;
 width: 100%;
 text-align: center;
 background-color: white;
+z-index: 5;
 }
-
 
 /*Clock Starts */
 *{
@@ -80,7 +95,6 @@ background-color: white;
     margin-left: 200px;
     margin-top : 100px;
     opacity: 0.9;
-
 
 }
 #clock-face{
@@ -112,4 +126,8 @@ background-color: white;
 }
 #translation-list {
   list-style: none;
+}
+
+.flag{
+  border-radius: 50%;
 }

@@ -12,8 +12,10 @@
   padding-top: 20px;
 }
 main {
-  margin-left: 200px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
+  margin-top: 100px;
+  margin-left: 300px;
+  max-width: 800px;
+  padding: 10px;
 }
 #user-login {
   position: fixed;
@@ -36,4 +38,10 @@ body {
   margin-left: -100px;
   position: fixed;
   text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#trip-list {
+  list-style: none;
+  cursor: pointer;
 }

@@ -11,13 +11,14 @@
 <body>
   <div id="sidebar" class="sidenav card hidden">
 
-    <h2 id="user-display" user-id="0"></h2>
+    <h2 id="user-display"></h2>
 
   <form id="trip-form" class ='hidden'>
-    <label for="trip-name">Trip Name:</label>
+    <label for="trip-name">Create New Trip:</label>
     <input type="text" id="trip-name" placeholder="Name of Trip">
-    <input type="submit" name="Submit" value="Create Trip">
+    <input type="submit" name="Submit" value="Create Trip" class="btn btn-success btn-sm">
   </form>
+  <br>
   <ul id="trip-list">
 
   </ul>
@@ -32,7 +33,7 @@
 <div id="title" class="card">
   <h1> Translatr </h1>
 </div>
-<main class='hidden'>
+<main class='hidden card'>
 <h2 id="selected-list" trip-id="0"></h2>
 <form id="translate-form">
 <select  id='lang-select' name="language">
@@ -51,8 +52,7 @@
 <br>
 <label for="translate-text">Text to Translate:</label>
 <input type="text" id="translate-text" placeholder="Text to Translate">
-<br>
-<input type="submit" name="Submit" value="Translate">
+<input type="submit" name="Submit" value="Translate" class = "btn btn-success">
 </form>
 <h4 id="translation"></h4>
 <ul id="translation-list">

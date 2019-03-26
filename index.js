@@ -36,6 +36,11 @@ userForm.addEventListener('submit', (ev)=> {
     userDisplay.innerText = json.username
     const logoutButton = document.createElement('button')
     logoutButton.innerText = "Logout"
+    logoutButton.classList.add("btn-info")
+    logoutButton.classList.add("btn")
+    logoutButton.classList.add("btn-sm")
+    let br = document.createElement('br')
+    userDisplay.appendChild(br)
     userDisplay.appendChild(logoutButton)
     logoutButton.addEventListener('click', ()=>{
       window.location.reload()
@@ -98,12 +103,21 @@ translateForm.addEventListener('submit', (ev)=>{
 function addTripToList(trip) {
   let li = document.createElement("li")
   let deleteButton = document.createElement("button")
-  li.innerText = trip.name
+  let emptySpan = document.createElement("span")
+  let tripSpan = document.createElement("span")
+  emptySpan.innerText = "  "
+  deleteButton.classList.add("btn")
+  deleteButton.classList.add("btn-danger")
+  deleteButton.classList.add("btn-sm")
+
+  tripSpan.innerText = trip.name
   li.setAttribute("trip-id", trip.id)
-  deleteButton.innerText = "Delete"
+  deleteButton.innerText = "X"
+  li.appendChild(tripSpan)
+  li.appendChild(emptySpan)
   li.appendChild(deleteButton)
   tripList.appendChild(li)
-  li.addEventListener("click", ()=> {
+  tripSpan.addEventListener("click", ()=> {
     mainTranslate.classList.remove('hidden')
     selectedTrip.innerText = trip.name
     selectedTrip.setAttribute("trip-id", trip.id)
@@ -123,6 +137,7 @@ function addTripToList(trip) {
     fetch(baseURL + /trips/ + `${li.getAttribute("trip-id")}`, {
       method: "DELETE"})
       li.remove()
+      mainTranslate.classList.add("hidden")
     }
   })
 }
@@ -130,9 +145,15 @@ function addTripToList(trip) {
 function renderTranslation(translation){
   let li = document.createElement("li")
   let deleteButton = document.createElement("button")
-  deleteButton.innerText = "Delete Translation"
+  let emptySpan = document.createElement("span")
+  emptySpan.innerText = "  "
+  deleteButton.innerText = "X"
+  deleteButton.classList.add("btn")
+  deleteButton.classList.add("btn-danger")
+  deleteButton.classList.add("btn-sm")
   li.setAttribute("translation-id", translation.id)
   li.innerText = translation.source_text + " - " + translation.output_text
+  li.appendChild(emptySpan)
   li.appendChild(deleteButton)
   translationList.appendChild(li)
   deleteButton.addEventListener("click", ()=>{

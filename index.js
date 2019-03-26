@@ -11,6 +11,7 @@ const tripList = document.getElementById("trip-list")
 const selectedTrip = document.getElementById('selected-list')
 const translationList = document.getElementById("translation-list")
 const mainTranslate = document.querySelector('main');
+const userLogin = document.getElementById('user-login')
 
 const baseURL = "http://localhost:3000/api/v1"
 
@@ -18,6 +19,8 @@ userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
   if(validateUserForm()){
   tripForm.classList.remove('hidden')
+  sidebar.classList.remove('hidden')
+  userLogin.classList.add('hidden')
   fetch( baseURL + '/users', {
     method: "POST",
     headers:{

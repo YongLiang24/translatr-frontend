@@ -93,6 +93,7 @@ function addTripToList(trip) {
     })
     .then(resp => resp.json())
     .then(json => {
+      translationList.innerText = ''
       for (let i = 0; i < json.translations.length; i++){
         renderTranslation(json.translations[i])
       }
@@ -109,8 +110,18 @@ function addTripToList(trip) {
 
 function renderTranslation(translation){
   let li = document.createElement("li")
+  let deleteButton = document.createElement("button")
+  deleteButton.innerText = "Delete Translation"
+  li.setAttribute("translation-id", translation.id)
   li.innerText = translation.source_text + " - " + translation.output_text
+  li.appendChild(deleteButton)
   translationList.appendChild(li)
+  deleteButton.addEventListener("click", ()=>{
+    fetch(baseURL + "/translations/" + translation.id , {
+      method: "DELETE"
+    })
+    li.remove()
+  })
 }
 
 function createTranslation(json){

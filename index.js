@@ -16,6 +16,7 @@ const baseURL = "http://localhost:3000/api/v1"
 
 userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
+  if(validateUserForm()){
   tripForm.classList.remove('hidden')
   fetch( baseURL + '/users', {
     method: "POST",
@@ -43,11 +44,12 @@ userForm.addEventListener('submit', (ev)=> {
       addTripToList(json.trips[i])
     }
   })
+}
 })
 
 tripForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
-
+if(validateTripForm()){
   fetch(baseURL + '/trips', {
     method: "POST",
     headers:{
@@ -64,10 +66,12 @@ tripForm.addEventListener('submit', (ev)=> {
     addTripToList(json)
     tripName.value = ''
   })
+}
 })
 
 translateForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
+  if(validateTranslateForm()){
   fetch(baseURL + '/translate', {
     method: "POST",
     headers:{
@@ -85,6 +89,7 @@ translateForm.addEventListener('submit', (ev)=>{
   .then(json => {
       createTranslation(json)
   })
+}
 })
 
 function addTripToList(trip) {
@@ -128,10 +133,12 @@ function renderTranslation(translation){
   li.appendChild(deleteButton)
   translationList.appendChild(li)
   deleteButton.addEventListener("click", ()=>{
+    if (confirm('Are you sure you want to delete this translation?')){
     fetch(baseURL + "/translations/" + translation.id , {
       method: "DELETE"
     })
     li.remove()
+  }
   })
 }
 
@@ -164,6 +171,37 @@ function createTranslation(json){
     .then(resp => resp.json())
     .then(json => {
       renderTranslation(json)
+      translation.innerText = ''
     })
   })
+}
+
+function validateUserForm(){
+  if(userName.value == ''){
+    alert('Username must be filled out.');
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+function validateTripForm(){
+  if(tripName.value == ''){
+    alert('Trip name must be filled out.');
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+function validateTranslateForm(){
+  if(translateText.value == ''){
+    alert('Translate text must be filled out.');
+    return false;
+  }
+  else {
+    return true;
+  }
 }

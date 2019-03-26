@@ -59,3 +59,9 @@ width: 100%;
 text-align: center;
 background-color: white;
 }
+.trip-list-item {
+  padding-top: 2px;
+}
+#translation-list {
+  list-style: none;
+}

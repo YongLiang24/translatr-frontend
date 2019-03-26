@@ -10,11 +10,13 @@ const userDisplay = document.getElementById('user-display')
 const tripList = document.getElementById("trip-list")
 const selectedTrip = document.getElementById('selected-list')
 const translationList = document.getElementById("translation-list")
+const mainTranslate = document.querySelector('main');
 
 const baseURL = "http://localhost:3000/api/v1"
 
 userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
+  tripForm.classList.remove('hidden')
   fetch( baseURL + '/users', {
     method: "POST",
     headers:{
@@ -28,6 +30,13 @@ userForm.addEventListener('submit', (ev)=> {
   .then(resp => resp.json())
   .then(json => {
     userDisplay.innerText = json.username
+    const logoutButton = document.createElement('button')
+    logoutButton.innerText = "Logout"
+    userDisplay.appendChild(logoutButton)
+    logoutButton.addEventListener('click', ()=>{
+      window.location.reload()
+    })
+
     userDisplay.setAttribute("user-id", json.id)
     userForm.classList.add('hidden')
     for (let i = 0; i < json.trips.length; i++){
@@ -38,6 +47,7 @@ userForm.addEventListener('submit', (ev)=> {
 
 tripForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
+
   fetch(baseURL + '/trips', {
     method: "POST",
     headers:{
@@ -86,6 +96,7 @@ function addTripToList(trip) {
   li.appendChild(deleteButton)
   tripList.appendChild(li)
   li.addEventListener("click", ()=> {
+    mainTranslate.classList.remove('hidden')
     selectedTrip.innerText = trip.name
     selectedTrip.setAttribute("trip-id", trip.id)
     fetch(baseURL + "/trips/" + trip.id,{
@@ -125,6 +136,7 @@ function renderTranslation(translation){
 }
 
 function createTranslation(json){
+  translation.innerText = ""
   let sourceSpan = document.createElement("span")
   sourceSpan.setAttribute("id", "source")
   let outputSpan = document.createElement("span")

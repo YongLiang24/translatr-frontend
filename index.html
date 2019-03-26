@@ -12,10 +12,12 @@
 
     <h2 id="user-display" user-id="0"></h2>
   <form id="user-form">
+    <label for="user-name">UserName:</label>
     <input type="text" id="user-name" placeholder="Username">
     <input type="submit" name="Submit" value="Create or Find User">
   </form>
-  <form id="trip-form">
+  <form id="trip-form" class ='hidden'>
+    <label for="trip-name">Trip Name:</label>
     <input type="text" id="trip-name" placeholder="Name of Trip">
     <input type="submit" name="Submit" value="Create Trip">
   </form>
@@ -23,15 +25,24 @@
 
   </ul>
 </div>
-<main>
+<main class='hidden'>
 <h2 id="selected-list" trip-id="0"></h2>
 <form id="translate-form">
 <select  id='lang-select' name="language">
   <option value="en">English</option>
   <option value="ru">Russian</option>
+  <option value="ar">Arabic</option>
+  <option value="zh-CN">Chinese</option>
+  <option value="fr">French</option>
+  <option value="de">German</option>
+  <option value="it">Italian</option>
+  <option value="ja">Japanese</option>
+  <option value="pt">Portugese</option>
+  <option value="es">Spanish</option>
   <br>
 </select>
 <br>
+<label for="translate-text">Text to Translate:</label>
 <input type="text" id="translate-text" placeholder="Text to Translate">
 <br>
 <input type="submit" name="Submit" value="Translate">

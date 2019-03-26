@@ -51,6 +51,18 @@
   <option value="ja">Japanese</option>
   <option value="pt">Portugese</option>
   <option value="es">Spanish</option>
+
+  <option value="hr">Groatian</option>
+  <option value="cs">Czech</option>
+  <option value="nl">Dutch</option>
+  <option value="el">Greek</option>
+  <option value="ga">Irish</option>
+
+  <option value="=ko">Korean</option>
+  <option value="la">Latin</option>
+  <option value="vi">Vietnamese</option>
+  <option value="tr">Turkish</option>
+  <option value="th">Thai</option>
   <br>
 </select>
 <br>
@@ -71,5 +83,29 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- clock starts -->
+<div class="analog-clock" id="analog-clock">
+    <svg width="140" height="140">
+        <circle id="clock-face" cx="70" cy="70" r="65" />
+        <line id="h-hand" x1="70" y1="70" x2="70" y2="38" />
+        <line id="m-hand" x1="70" y1="70" x2="70" y2="20" />
+        <line id="s-hand" x1="70" y1="70" x2="70" y2="12" />
+        <line id="s-tail" x1="70" y1="70" x2="70" y2="56" />
+        <text x="62" y="18" >12</text>
+        <text x="126" y="76">3</text>
+        <text x="66" y="130">6</text>
+        <text x="7" y="76">9</text>
+    </svg>
+    <div class="time-text" >
+        <span id="hr" style = 'text-shadow: 0 0 3px #FF0000;'>00</span>
+        <span>:</span>
+        <span id="min" style = 'text-shadow: 0 0 3px #FF0000;'>00</span>
+        <span>:</span>
+        <span id="sec" style = 'text-shadow: 0 0 3px #FF0000;'>00</span>
+        <span id="suffix" style = 'text-shadow: 0 0 3px #FF0000;'>--</span>
+    </div>
+</div>
+<!-- clock ends -->
+
 </body>
 </html>

@@ -25,6 +25,9 @@ main {
   margin-left: -175px;
   padding: 20px;
   text-align: right;
+/* adds border to box */
+  border-radius: 25px;
+  border: 2px solid #73AD21;
 }
 body {
  background-image: url("https://i.imgur.com/kTHsLi9.jpg");
@@ -40,6 +43,9 @@ body {
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
+  text-shadow: 0 0 3px #FF0000;
+  box-shadow: 5px 5px 5px grey;
+
 }
 #trip-list {
   list-style: none;
@@ -59,3 +65,44 @@ width: 100%;
 text-align: center;
 background-color: white;
 }
+
+/*Clock Starts */
+*{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    font-size:14px;
+}
+.analog-clock{
+    width:140px;
+    height:140px;
+    margin-left: 200px;
+    margin-top : 100px;
+    opacity: 0.9;
+
+
+}
+#clock-face{
+    stroke:black;
+    stroke-width:2px;
+    fill:white;
+}
+#h-hand, #m-hand, #s-hand, #s-tail{
+    stroke:black;
+    stroke-linecap:round;
+}
+#h-hand{
+    stroke-width:3px;
+}
+#m-hand{
+    stroke-width:2px;
+}
+#s-hand{
+    stroke-width:1px;
+}
+.time-text{
+    text-align:center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+/*Clock Ends */

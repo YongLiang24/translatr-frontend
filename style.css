@@ -45,3 +45,10 @@ body {
   list-style: none;
   cursor: pointer;
 }
+#about-button {
+  max-width: 100px;
+  margin-left: 80px;
+}
+#about {
+  max-width: 250px;
+}

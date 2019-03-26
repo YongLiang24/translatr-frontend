@@ -118,6 +118,7 @@ function addTripToList(trip) {
   li.appendChild(deleteButton)
   tripList.appendChild(li)
   tripSpan.addEventListener("click", ()=> {
+    translation.innerText = ''
     mainTranslate.classList.remove('hidden')
     selectedTrip.innerText = trip.name
     selectedTrip.setAttribute("trip-id", trip.id)
@@ -174,6 +175,8 @@ function createTranslation(json){
   outputSpan.setAttribute("id", "output")
   let spacingSpan = document.createElement("span")
   let saveButton = document.createElement("button")
+  saveButton.classList.add("btn")
+  saveButton.classList.add("btn-info")
   saveButton.innerText = "Save Translation to Trip"
   spacingSpan.innerText = " - "
   sourceSpan.innerText = translateText.value

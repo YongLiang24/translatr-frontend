@@ -119,6 +119,7 @@ function addTripToList(trip) {
   li.appendChild(tripSpan)
   li.appendChild(emptySpan)
   li.appendChild(deleteButton)
+  li.classList.add("trip-list-item")
   tripList.appendChild(li)
   tripSpan.addEventListener("click", ()=> {
     translation.innerText = ''

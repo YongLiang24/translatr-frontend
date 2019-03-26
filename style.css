@@ -66,6 +66,7 @@ text-align: center;
 background-color: white;
 }
 
+
 /*Clock Starts */
 *{
     margin:0;
@@ -106,3 +107,9 @@ background-color: white;
     text-shadow: 2px 2px 4px #000000;
 }
 /*Clock Ends */
+.trip-list-item {
+  padding-top: 2px;
+}
+#translation-list {
+  list-style: none;
+}

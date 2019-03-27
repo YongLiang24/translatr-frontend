@@ -102,5 +102,45 @@
         <span id="suffix" style = 'text-shadow: 0 0 3px #FF0000;'>--</span>
     </div>
 </div>
+
+<!--Currency Exchange starts  -->
+<div id='currency-div' class='card'>
+  <h5><strong>Currency Converter</strong></h5>
+  <form id="currency-form">
+    <label for="base-currency"><strong>Convert From</strong></label>
+  <select id="base-currency">
+    <option value="BGN">Bulgarian Lev</option>
+    <option value="NZD">New Zealand Dollars</option>
+    <option value="RUB">Russian Ruble</option>
+    <option value="CAD">Canadian Dollars</option>
+    <option value="USD">US Dollars</option>
+    <option value="AUD">Australian Dollars</option>
+    <option value="JPY">Japanese Yen</option>
+    <option value="HKD">Hong Kong Dollars</option>
+    <option value="CZK">Czech Koruna</option>
+    <option value="GBP">Great British Pounds</option>
+    <option value="CNY">Chinese Yuan</option>
+    <option value="EUR">Euro</option>
+  </select> <br>
+  <label for="convert-currency"><strong>Convert To</strong></label>
+  <select id="convert-currency">
+    <option value="BGN">Bulgarian Lev</option>
+    <option value="NZD">New Zealand Dollars</option>
+    <option value="RUB">Russian Ruble</option>
+    <option value="CAD">Canadian Dollars</option>
+    <option value="USD">US Dollars</option>
+    <option value="AUD">Australian Dollars</option>
+    <option value="JPY">Japanese Yen</option>
+    <option value="HKD">Hong Kong Dollars</option>
+    <option value="CZK">Czech Koruna</option>
+    <option value="GBP">Great British Pounds</option>
+    <option value="CNY">Chinese Yuan</option>
+    <option value="EUR">Euro</option>
+  </select><br>
+  <input type="submit" value="Comfirm" class='btn btn-info'>
+  </form>
+  <p id='display-result'> <span id='base-span'></span>  <span id='convert-span'></span>
+  </p>
+</div>
 </body>
 </html>

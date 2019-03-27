@@ -12,11 +12,17 @@ const selectedTrip = document.getElementById('selected-list')
 const translationList = document.getElementById("translation-list")
 const mainTranslate = document.getElementById('main');
 const userLogin = document.getElementById('user-login')
-
 const baseURL = "http://localhost:3000/api/v1"
-
 const clockDiv = document.getElementById("analog-clock")
 
+const currencyDiv = document.getElementById('currency-div')
+const currencyForm = document.getElementById('currency-form')
+const baseCurrency = document.getElementById('base-currency')
+const convertCurrency = document.getElementById('convert-currency')
+const displayResult = document.getElementById('display-result')
+const CURRENCY_URL = 'https://api.exchangeratesapi.io/latest?base='
+const baseSpan = document.getElementById('base-span')
+const convertSpan = document.getElementById('convert-span')
 userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
   if(validateUserForm()){
@@ -51,6 +57,7 @@ userForm.addEventListener('submit', (ev)=> {
     userDisplay.setAttribute("user-id", json.id)
     userForm.classList.add('hidden')
     clockDiv.classList.add('hidden')
+    currencyDiv.classList.add('hidden')
     for (let i = 0; i < json.trips.length; i++){
       addTripToList(json.trips[i])
     }
@@ -296,3 +303,15 @@ function setText(id,val){
 };
 clock();
 //clock ends
+
+currencyForm.addEventListener('submit', (ev)=>{
+  ev.preventDefault();
+  fetch(CURRENCY_URL + baseCurrency.value + '&symbols=' + convertCurrency.value)
+  .then(resp => resp.json())
+  .then(json =>{
+
+    baseSpan.innerText = '1 ' + json.base + ' = '
+    convertSpan.innerText = Object.values(json.rates)[0].toFixed(2) + ' ' + convertCurrency.value
+
+  })
+})

@@ -153,6 +153,7 @@ function renderTranslation(translation){
   let li = document.createElement("li")
   let deleteButton = document.createElement("button")
   let emptySpan = document.createElement("span")
+
   emptySpan.innerText = "  "
   deleteButton.innerText = "X"
   deleteButton.classList.add("btn")
@@ -180,6 +181,8 @@ function createTranslation(json){
   let outputSpan = document.createElement("span")
   outputSpan.setAttribute("id", "output")
   let spacingSpan = document.createElement("span")
+  let spacingSpanSave = document.createElement("span")
+  spacingSpanSave.innerText = "   "
   let saveButton = document.createElement("button")
   saveButton.classList.add("btn")
   saveButton.classList.add("btn-info")
@@ -190,6 +193,7 @@ function createTranslation(json){
   translation.appendChild(sourceSpan)
   translation.appendChild(spacingSpan)
   translation.appendChild(outputSpan)
+  translation.appendChild(spacingSpanSave)
   translation.appendChild(saveButton)
   translateText.value = ''
   saveButton.addEventListener("click", (ev) => {

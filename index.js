@@ -23,6 +23,7 @@ const displayResult = document.getElementById('display-result')
 const CURRENCY_URL = 'https://api.exchangeratesapi.io/latest?base='
 const baseSpan = document.getElementById('base-span')
 const convertSpan = document.getElementById('convert-span')
+// const currencyDate = document.getElementById('date')
 userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
   if(validateUserForm()){
@@ -260,18 +261,18 @@ function validateTranslateForm(){
 
 //clock starts
 function clock(){
-    //calculate angle
+
     let d, h, m, s;
     d = new Date;
     h = 30 * ((d.getHours() % 12) + d.getMinutes() / 60);
     m = 6 * d.getMinutes();
     s = 6 * d.getSeconds();
-    //move hands
+
     setAttr('h-hand', h);
     setAttr('m-hand', m);
     setAttr('s-hand', s);
     setAttr('s-tail', s+180);
-    //display time
+
     h = d.getHours();
     m = d.getMinutes();
     s = d.getSeconds();
@@ -286,7 +287,6 @@ function clock(){
     setText('sec', s);
     setText('min', m);
     setText('hr', h);
-    //call every second
     setTimeout(clock, 1000);
 };
 
@@ -304,14 +304,15 @@ function setText(id,val){
 clock();
 //clock ends
 
+//currency converter start
 currencyForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
   fetch(CURRENCY_URL + baseCurrency.value + '&symbols=' + convertCurrency.value)
   .then(resp => resp.json())
   .then(json =>{
-
-    baseSpan.innerText = '1 ' + json.base + ' = '
-    convertSpan.innerText = Object.values(json.rates)[0].toFixed(2) + ' ' + convertCurrency.value
-
+    baseSpan.innerText = '1 ' + json.base + ' = ';
+    convertSpan.innerText = Object.values(json.rates)[0].toFixed(2) + ' ' + convertCurrency.value;
+    // currencyDate.innerText = 'Date: ' + json.date;
   })
 })
+//currency converter ends

@@ -29,9 +29,9 @@
   <input type="text" id="user-name"><br>
   <input type="submit" name="Submit" value="Create User or Login" class="btn btn-success">
 </form><br>
-<button id="about-button" type="button" class="btn btn-info" data-toggle="collapse" data-target="#about">About</button>
+<button id="about-button" type="button" class="btn btn-info" data-toggle="collapse" data-target="#about" onclick="clickAudio('click')">About</button>
   <span id="about" class="collapse">
-    Translatr is a utility to create trips, translate common phrases you'll use on that trip, and save them to that trip as a phrasebook.
+    <strong> Translatr is a utility to create trips, translate common phrases you'll use on that trip, and save them to that trip as a phrasebook.</strong>
   </span>
 </div>
 <div id="title" class="card">
@@ -186,7 +186,6 @@
         <span id="suffix" style = 'text-shadow: 0 0 3px #FF0000;'>--</span>
     </div>
 </div>
-
 <!--Currency Exchange starts  -->
 <div id='currency-div' class='card'>
   <h5><strong>Currency Converter</strong></h5>
@@ -265,5 +264,14 @@
   <!-- <h6 id='date'></h6> -->
   <h1 id='display-result'> <span id='base-span'></span>  <span id='convert-span'></span></h1>
 </div>
+<!--Currency end  -->
+<!--sound effects start  -->
+<audio  src="audios/click.wav" id='click-audio'></audio>
+<audio  src="audios/error.wav" id='error-audio'></audio>
+<audio  src="audios/delete.wav" id='delete-audio'></audio>
+<audio  src="audios/logout.wav" id='logout-audio'></audio>
+<audio  src="audios/save.wav" id='save-audio'></audio>
+<audio  src="audios/list.mp3" id='list-audio'></audio>
+<!-- <button onclick="clickPlay()" type="button">Play Audio</button> -->
 </body>
 </html>

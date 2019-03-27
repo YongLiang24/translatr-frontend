@@ -23,10 +23,12 @@ const displayResult = document.getElementById('display-result')
 const CURRENCY_URL = 'https://api.exchangeratesapi.io/latest?base='
 const baseSpan = document.getElementById('base-span')
 const convertSpan = document.getElementById('convert-span')
+
 // const currencyDate = document.getElementById('date')
 userForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
   if(validateUserForm()){
+  clickAudio('click');//play the click
   tripForm.classList.remove('hidden')
   sidebar.classList.remove('hidden')
   userLogin.classList.add('hidden')
@@ -52,7 +54,8 @@ userForm.addEventListener('submit', (ev)=> {
     userDisplay.appendChild(br)
     userDisplay.appendChild(logoutButton)
     logoutButton.addEventListener('click', ()=>{
-      window.location.reload()
+      clickAudio("logout");
+      setTimeout(window.location.reload.bind(location), 1000);
     })
 
     userDisplay.setAttribute("user-id", json.id)
@@ -69,6 +72,7 @@ userForm.addEventListener('submit', (ev)=> {
 tripForm.addEventListener('submit', (ev)=> {
   ev.preventDefault()
 if(validateTripForm()){
+  clickAudio('click');
   fetch(baseURL + '/trips', {
     method: "POST",
     headers:{
@@ -91,6 +95,7 @@ if(validateTripForm()){
 translateForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
   if(validateTranslateForm()){
+    clickAudio("click");
   fetch(baseURL + '/translate', {
     method: "POST",
     headers:{
@@ -136,6 +141,7 @@ function addTripToList(trip) {
   // li.classList.add("trip-list-item")
   tripList.appendChild(li)
   tripSpan.addEventListener("click", ()=> {
+    clickAudio("list");
     translation.innerText = ''
     mainTranslate.classList.remove('hidden')
     selectedTrip.innerText = trip.name
@@ -152,8 +158,10 @@ function addTripToList(trip) {
     })
   })
   deleteButton.addEventListener("click", ()=> {
+
     if (confirm('Are you sure you want to delete this trip?')) {
-    fetch(baseURL + /trips/ + `${li.getAttribute("trip-id")}`, {
+      clickAudio("delete");
+      fetch(baseURL + /trips/ + `${li.getAttribute("trip-id")}`, {
       method: "DELETE"})
       li.remove()
       mainTranslate.classList.add("hidden")
@@ -181,7 +189,9 @@ function renderTranslation(translation){
   li.appendChild(deleteButton)
   translationList.appendChild(li)
   deleteButton.addEventListener("click", ()=>{
+
     if (confirm('Are you sure you want to delete this translation?')){
+      clickAudio("delete");
     fetch(baseURL + "/translations/" + translation.id , {
       method: "DELETE"
     })
@@ -213,6 +223,7 @@ function createTranslation(json){
   translation.appendChild(saveButton)
   translateText.value = ''
   saveButton.addEventListener("click", (ev) => {
+    clickAudio("save");
     fetch(baseURL + '/trips/' + selectedTrip.getAttribute("trip-id") + "/translations", {
       method: "POST",
       headers:{ "Content-Type": "application/json", Accept: "application/json" },
@@ -231,6 +242,7 @@ function createTranslation(json){
 
 function validateUserForm(){
   if(userName.value == ''){
+    clickAudio("error");
     alert('Username must be filled out.');
     return false;
   }
@@ -241,6 +253,7 @@ function validateUserForm(){
 
 function validateTripForm(){
   if(tripName.value == ''){
+    clickAudio("error");
     alert('Trip name must be filled out.');
     return false;
   }
@@ -251,6 +264,7 @@ function validateTripForm(){
 
 function validateTranslateForm(){
   if(translateText.value == ''){
+    clickAudio("error");
     alert('Translate text must be filled out.');
     return false;
   }
@@ -307,6 +321,7 @@ clock();
 //currency converter start
 currencyForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
+  clickAudio("click");
   fetch(CURRENCY_URL + baseCurrency.value + '&symbols=' + convertCurrency.value)
   .then(resp => resp.json())
   .then(json =>{
@@ -316,3 +331,34 @@ currencyForm.addEventListener('submit', (ev)=>{
   })
 })
 //currency converter ends
+
+//clicking sounds start
+function clickAudio(play) {
+  let click = document.getElementById("click-audio");
+  let logoutAudio = document.getElementById("logout-audio");
+  let errorAudio = document.getElementById('error-audio');
+  let deleteAudio = document.getElementById('delete-audio');
+  let saveAudio = document.getElementById('save-audio');
+  let listAudio = document.getElementById("list-audio");
+  switch(play){
+    case "click":
+      click.play();
+      break;
+    case "error":
+      errorAudio.play();
+      break;
+    case "logout":
+      logoutAudio.play();
+      break;
+    case "delete":
+      deleteAudio.play();
+      break;
+    case "save":
+      saveAudio.play();
+      break;
+    case "list":
+      listAudio.play();
+      break;
+  }
+}
+//clicking sounds ends

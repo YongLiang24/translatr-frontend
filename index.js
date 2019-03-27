@@ -109,15 +109,19 @@ function addTripToList(trip) {
   let deleteButton = document.createElement("button")
   let emptySpan = document.createElement("span")
   let tripSpan = document.createElement("span")
+  let deleteSpan = document.createElement('span')
+  deleteSpan.innerText = "Delete"
+  deleteSpan.classList.add("tooltiptext")
   tripSpan.classList.add('trip-list-item')
   emptySpan.innerText = "  "
   deleteButton.classList.add("btn")
   deleteButton.classList.add("btn-danger")
   deleteButton.classList.add("btn-sm")
-
+  deleteButton.setAttribute("id", "delete-list")
   tripSpan.innerText = trip.name
   li.setAttribute("trip-id", trip.id)
   deleteButton.innerText = "X"
+  deleteButton.appendChild(deleteSpan)
   li.appendChild(tripSpan)
   li.appendChild(emptySpan)
   li.appendChild(deleteButton)
@@ -153,12 +157,16 @@ function renderTranslation(translation){
   let li = document.createElement("li")
   let deleteButton = document.createElement("button")
   let emptySpan = document.createElement("span")
-
+  let hoverSpan = document.createElement('span')
+  hoverSpan.classList.add("tooltiptext")
+  hoverSpan.innerText = "Delete"
   emptySpan.innerText = "  "
   deleteButton.innerText = "X"
   deleteButton.classList.add("btn")
   deleteButton.classList.add("btn-danger")
   deleteButton.classList.add("btn-sm")
+  deleteButton.setAttribute("id", "tooltip")
+  deleteButton.appendChild(hoverSpan)
   li.setAttribute("translation-id", translation.id)
   li.innerText = translation.source_text + " - " + translation.output_text
   li.appendChild(emptySpan)
@@ -182,7 +190,7 @@ function createTranslation(json){
   outputSpan.setAttribute("id", "output")
   let spacingSpan = document.createElement("span")
   let spacingSpanSave = document.createElement("span")
-  spacingSpanSave.innerText = "   "
+  spacingSpanSave.innerText = "  "
   let saveButton = document.createElement("button")
   saveButton.classList.add("btn")
   saveButton.classList.add("btn-info")

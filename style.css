@@ -22,6 +22,7 @@
   width: 55%;
   border-radius: 25px;
   border: 2px solid #73AD21;
+  padding-left: 10px;
 }
 #user-login {
   position: fixed;
@@ -47,7 +48,7 @@ body {
   left: 50%;
   top: 5%;
   margin-left: -100px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
@@ -128,6 +129,38 @@ z-index: 5;
   list-style: none;
 }
 
-.flag{
-  border-radius: 50%;
+
+/*Tooltip starts  */
+.btn {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+}
+
+.btn .tooltiptext{
+  visibility: hidden;
+  width: 60px;
+  background-color: #DC143C;
+  color: #F0FFFF;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 0;
+  height: auto;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 130%;
+}
+
+.btn:hover .tooltiptext{
+  visibility: visible;
+}
+/*tooltip ends  */
+/* styling lists */
+li, #output, #source{
+  line-height: 3;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
 }

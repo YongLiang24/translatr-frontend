@@ -173,3 +173,6 @@ li, #output, #source{
   margin-left: 1000px;
   margin-top: -120px;
 }
+#base-span, #convert-span{
+  font-size: 0.6em;
+}

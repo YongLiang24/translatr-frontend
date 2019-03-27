@@ -55,7 +55,7 @@ userForm.addEventListener('submit', (ev)=> {
     userDisplay.appendChild(logoutButton)
     logoutButton.addEventListener('click', ()=>{
       clickAudio("logout");
-      setTimeout(window.location.reload.bind(location), 1000);
+      setTimeout(window.location.reload.bind(location), 500);
     })
 
     userDisplay.setAttribute("user-id", json.id)
@@ -95,7 +95,7 @@ if(validateTripForm()){
 translateForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
   if(validateTranslateForm()){
-    clickAudio("click");
+    clickAudio("translate");
   fetch(baseURL + '/translate', {
     method: "POST",
     headers:{
@@ -321,7 +321,7 @@ clock();
 //currency converter start
 currencyForm.addEventListener('submit', (ev)=>{
   ev.preventDefault();
-  clickAudio("click");
+  clickAudio("convert");
   fetch(CURRENCY_URL + baseCurrency.value + '&symbols=' + convertCurrency.value)
   .then(resp => resp.json())
   .then(json =>{
@@ -340,6 +340,8 @@ function clickAudio(play) {
   let deleteAudio = document.getElementById('delete-audio');
   let saveAudio = document.getElementById('save-audio');
   let listAudio = document.getElementById("list-audio");
+  let translateAudio = document.getElementById("translate-audio");
+  let rise03Audio = document.getElementById("rise03-audio");
   switch(play){
     case "click":
       click.play();
@@ -359,6 +361,13 @@ function clickAudio(play) {
     case "list":
       listAudio.play();
       break;
+    case "translate":
+      translateAudio.play();
+      break;
+    case "convert":
+      rise03Audio.play();
+      break;
+
   }
 }
 //clicking sounds ends

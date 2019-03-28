@@ -3,6 +3,6 @@ require 'sinatra'
 
 class MyApp < Sinatra::Base
   get '/' do
-    File.read(File.join('public', 'index.html'))
+    File.read(File.join('index.html'))
   end
 end

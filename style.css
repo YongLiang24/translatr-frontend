@@ -196,6 +196,7 @@ li, #output, #source{
     margin-left: 75px;
     margin-top: 40px;
     /* margin-top: -120px; */
+    z-index: 10;
   }
 
   .mySlides {

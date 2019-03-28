@@ -14,7 +14,6 @@ const mainTranslate = document.getElementById('main');
 const userLogin = document.getElementById('user-login')
 const baseURL = "http://localhost:3000/api/v1"
 const clockDiv = document.getElementById("analog-clock")
-
 const currencyDiv = document.getElementById('currency-div')
 const currencyForm = document.getElementById('currency-form')
 const baseCurrency = document.getElementById('base-currency')
@@ -23,6 +22,7 @@ const displayResult = document.getElementById('display-result')
 const CURRENCY_URL = 'https://api.exchangeratesapi.io/latest?base='
 const baseSpan = document.getElementById('base-span')
 const convertSpan = document.getElementById('convert-span')
+const flagDiv = document.getElementById('flag-div')
 
 // const currencyDate = document.getElementById('date')
 userForm.addEventListener('submit', (ev)=> {
@@ -32,6 +32,7 @@ userForm.addEventListener('submit', (ev)=> {
   tripForm.classList.remove('hidden')
   sidebar.classList.remove('hidden')
   userLogin.classList.add('hidden')
+  flagDiv.classList.add('hidden')
   fetch( baseURL + '/users', {
     method: "POST",
     headers:{
@@ -342,6 +343,7 @@ function clickAudio(play) {
   let listAudio = document.getElementById("list-audio");
   let translateAudio = document.getElementById("translate-audio");
   let rise03Audio = document.getElementById("rise03-audio");
+  let dropdownAudio = document.getElementById("dropdown-audio")
   switch(play){
     case "click":
       click.play();
@@ -367,7 +369,24 @@ function clickAudio(play) {
     case "convert":
       rise03Audio.play();
       break;
-
+    case "dropdown":
+    dropdownAudio.play();
+    break;
   }
 }
 //clicking sounds ends
+
+//flag images start
+let myIndex = 0;
+carousel();
+function carousel() {
+  let imageSlide = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < imageSlide.length; i++) {
+    imageSlide[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > imageSlide.length) {myIndex = 1}
+  imageSlide[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000);
+}
+//flag ends

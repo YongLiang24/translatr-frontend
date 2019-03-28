@@ -10,9 +10,7 @@
 </head>
 <body>
   <div id="sidebar" class="sidenav card hidden">
-
     <h2 id="user-display"></h2>
-
   <form id="trip-form" class ='hidden'>
     <label for="trip-name"><strong>Create New Trip:</strong></label>
     <input type="text" id="trip-name" placeholder="Name of Trip">
@@ -20,7 +18,6 @@
   </form>
   <br>
   <ul id="trip-list">
-
   </ul>
 </div>
 <div class="card" id="user-login">
@@ -40,8 +37,7 @@
 <div id='main' class='hidden card'>
 <h2 id="selected-list" trip-id="0"></h2>
 <form id="translate-form">
-<select  id='lang-select' name="language">
-
+<select  id='lang-select' name="language" onclick="clickAudio('dropdown')">
   <option value="af">Afrikaans</option>
   <option value="sq">Albanian</option>
   <option value="am">Amharic</option>
@@ -159,7 +155,6 @@
 <div class="footer">
  <a target="_blank" href="https://opensource.org/licenses/MIT">MIT License</a> Created by <a target="_blank" href="https://github.com/YongLiang24"><img src="https://i.imgur.com/tXPgB2E.png" width="18px"></a>Yong Liang and <a target="_blank" href="https://github.com/LucySuddenly"><img src="https://i.imgur.com/tXPgB2E.png" width="18px"></a>Lucy Suddenly
 </div>
-
   <script src="index.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -192,8 +187,8 @@
 
   <form id="currency-form">
     <label for="base-currency"><strong>Convert From</strong></label>
-  <select id="base-currency">
-    <option value="USD">US Dollars</option>
+  <select id="base-currency" onclick="clickAudio('dropdown')" >
+    <option value="USD" >US Dollars</option>
     <option value="AUD">Australian Dollars</option>
     <option value="BGN">Bulgarian Lev</option>
     <option value="BRL">Brazilian Real</option>
@@ -226,7 +221,7 @@
     <option value="ZAR">South African Rand</option>
   </select> <br>
   <label for="convert-currency"><strong>Convert To</strong></label>
-  <select id="convert-currency">
+  <select id="convert-currency" onclick="clickAudio('dropdown')">
     <option value="AUD">Australian Dollars</option>
     <option value="BGN">Bulgarian Lev</option>
     <option value="BRL">Brazilian Real</option>
@@ -259,7 +254,7 @@
     <option value="USD">US Dollars</option>
     <option value="ZAR">South African Rand</option>
   </select><br>
-  <input type="submit" value="Comfirm" class='btn btn-info'>
+  <input type="submit" value="Confirm" class='btn btn-info'>
   </form>
   <!-- <h6 id='date'></h6> -->
   <h1 id='display-result'> <span id='base-span'></span>  <span id='convert-span'></span></h1>
@@ -274,6 +269,52 @@
 <audio  src="audios/list.mp3" id='list-audio'></audio>
 <audio  src="audios/translate.wav" id='translate-audio'></audio>
 <audio  src="audios/Rise03.wav" id='rise03-audio'></audio>
-<!-- <button onclick="clickPlay()" type="button">Play Audio</button> -->
+<audio src="audios/dropdown.mp3" id='dropdown-audio'></audio>
+<!-- <button onclick="clickAudio()" type="button">Play Audio</button> -->
+<!--sound effects ends  -->
+
+<!--flags start  -->
+<div   id="flag-div" >
+  <img class="mySlides" src="images/afghan-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/american-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/argentinian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/australian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/brazilian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/british-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/canadian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/central-african-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/chilean-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/chinese-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/colombian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/croatian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/cuban-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/czech-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/dane-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/dominican-republic-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/dutch-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/egyptian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/emirian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/filipino-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/french-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/german-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/icelander-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/indian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/iraqi-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/italian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/japanese-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/mexican-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/new-zealander-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/portuguese-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/russian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/serbian-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/singaporean-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/south-korean-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/spanish-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/swedish-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/thai-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/turkish-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/uruguayan-flag-graphic.png" style="width:100%">
+  <img class="mySlides" src="images/vietnamese-flag-graphic.png" style="width:100%">
+</div>
 </body>
 </html>

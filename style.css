@@ -176,3 +176,15 @@ li, #output, #source{
 #base-span, #convert-span{
   font-size: 0.6em;
 }
+
+.mySlides {
+position: relative;
+}
+#flag-div{
+  /* position: fixed; */
+  max-width: 10%;
+  /* margin-left: 900px;
+  margin-top: 200px; */
+
+
+}

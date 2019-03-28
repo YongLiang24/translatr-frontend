@@ -178,13 +178,16 @@ li, #output, #source{
 }
 
 .mySlides {
-position: relative;
+  position: absolute;
+  max-width: 5%;
+  left: 780px;
+  top:40px;
+  border-radius: 10%;
 }
 #flag-div{
-  /* position: fixed; */
-  max-width: 10%;
-  /* margin-left: 900px;
-  margin-top: 200px; */
-
+  /* position: absolute; */
+  /* max-width: 5%;
+  left: 760px;
+  top: 50px; */
 
 }

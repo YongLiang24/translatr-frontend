@@ -42,7 +42,7 @@ body {
  background-size: cover;
  height: 100%;
  width: 100%;
- background-repeat: no-repeat;
+ background-repeat:repeat-y;
 }
 #title {
   left: 50%;
@@ -184,14 +184,41 @@ li, #output, #source{
   top:40px;
   border-radius: 10%;
 }
-#flag-div{
-  /* position: absolute; */
-  /* max-width: 5%;
-  left: 760px;
-  top: 50px; */
-}
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 1000px) {
   .analog-clock{
     visibility: hidden;
   }
+  #currency-div{
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    margin-left: 75px;
+    margin-top: 40px;
+    /* margin-top: -120px; */
+  }
+
+  .mySlides {
+    position: fixed;
+    max-width: 5%;
+    left: 310px;
+    bottom: 100px;
+    border-radius: 10%;
+  }
+
+  #user-login {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -175px;
+    padding: 20px;
+    text-align: right;
+    width: 280px;
+  /* adds border to box */
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+  }
+
+
 }

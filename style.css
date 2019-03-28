@@ -189,5 +189,9 @@ li, #output, #source{
   /* max-width: 5%;
   left: 760px;
   top: 50px; */
-
+}
+@media only screen and (max-width: 600px) {
+  .analog-clock{
+    visibility: hidden;
+  }
 }

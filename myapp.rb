@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'sinatra'
 
-get '/' do
-  File.read(File.join('public', 'index.html'))
+class MyApp < Sinatra::Base
+  get '/' do
+    File.read(File.join('public', 'index.html'))
+  end
 end

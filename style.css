@@ -244,7 +244,8 @@ li, #output, #source{
     width: 100%;
     left: -1.5px;
     bottom: -50px;
-    border-radius: 25px;
+    box-shadow: 8px 8px 8px silver;
+    border-radius: 3px;
   }
   /*Home page changes end  */
   /*login page changes start */

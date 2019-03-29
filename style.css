@@ -243,11 +243,10 @@ li, #output, #source{
     position: relative;
     width: 100%;
     left: -1.5px;
-    bottom: -70px;
+    bottom: -50px;
     border-radius: 25px;
   }
   /*Home page changes end  */
-
   /*login page changes start */
   .sidenav {
     position: relative;

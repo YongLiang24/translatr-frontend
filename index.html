@@ -9,9 +9,10 @@
   <title>Translatr</title>
 </head>
 <body>
-  <div id="sidebar" class="sidenav card hidden">
+  <div class ="container">
+  <div id="sidebar" class="sidenav card hidden container">
     <h2 id="user-display"></h2>
-  <form id="trip-form" class ='hidden'>
+  <form id="trip-form" class ='hidden container'>
     <label for="trip-name"><strong>Create New Trip:</strong></label>
     <input type="text" id="trip-name" placeholder="Name of Trip">
     <input type="submit" name="Submit" value="Create Trip" class="btn btn-success btn-sm">
@@ -78,7 +79,7 @@
   <img class="mySlides" src="images/vietnamese-flag-graphic.png" style="width:100%">
 </div>
 </section>
-<div id='main' class='hidden card'>
+<div id='main' class='hidden card container'>
 <h2 id="selected-list" trip-id="0"></h2>
 <form id="translate-form">
 <select  id='lang-select' name="language" onclick="clickAudio('dropdown')">
@@ -318,6 +319,6 @@
 <!--sound effects ends  -->
 
 <!--flags start  -->
-
+</div>
 </body>
 </html>

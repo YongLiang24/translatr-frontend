@@ -17,7 +17,6 @@
 #main {
   margin-top: 100px;
   margin-left: 300px;
-  /* max-width: 800px; */
   padding: 10px;
   width: 55%;
   border-radius: 25px;
@@ -33,7 +32,6 @@
   padding: 20px;
   text-align: right;
   width: 280px;
-/* adds border to box */
   border-radius: 25px;
   border: 2px solid #73AD21;
 }
@@ -48,7 +46,7 @@ body {
   left: 50%;
   top: 5%;
   margin-left: -100px;
-  position: absolute;
+  position: fixed;
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
@@ -93,9 +91,10 @@ z-index: 5;
 .analog-clock{
     width:140px;
     height:140px;
-    margin-left: 200px;
+    margin-left: 100px;
     margin-top : 100px;
     opacity: 0.9;
+    position: fixed;
 
 }
 #clock-face{
@@ -166,12 +165,12 @@ li, #output, #source{
 }
 
 #currency-div{
-  position: absolute;
+  position: fixed;
   text-align: center;
   border-radius: 25px;
   border: 2px solid #73AD21;
-  margin-left: 1000px;
-  margin-top: -120px;
+  margin-left: 800px;
+  margin-top: 120px;
 }
 #base-span, #convert-span{
   font-size: 0.6em;
@@ -185,56 +184,40 @@ li, #output, #source{
   border-radius: 10%;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
   .analog-clock{
     visibility: hidden;
   }
   #currency-div{
-    text-align: center;
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    margin-left: 75px;
-    margin-top: 10px;
-
-    /* margin-top: -120px; */
-    z-index: 10;
+    margin-left: 0px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 6;
   }
 
   .mySlides {
-    position: fixed;
-    max-width: 5%;
-    left: 310px;
-    bottom: 100px;
-    border-radius: 10%;
+    visibility: hidden;
+    left : 100px;
   }
 
   #user-login {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -175px;
-    padding: 20px;
-    text-align: right;
-    width: 280px;
-  /* adds border to box */
-    border-radius: 25px;
-    border: 2px solid #73AD21;
+    position: relative;
+    margin-top: 50px;
+
   }
 
-  #main {
+  /* #main {
     margin-top: 100px;
     margin-left: 200px;
-    /* max-width: 800px; */
+    max-width: 800px;
     padding: 10px;
     width: 50%;
     border-radius: 25px;
     border: 2px solid #73AD21;
     padding-left: 10px;
     z-index: 5;
-  }
-  #title {
-    left: 62%;
+  } */
+   #title {
     top: -2%;
   }
 }

@@ -73,12 +73,15 @@ body {
   max-width: 250px;
 }
 .footer {
-position: fixed;
 bottom: 0;
 width: 100%;
 text-align: center;
 background-color: white;
 z-index: 5;
+height:40px;
+margin-top:-40px;
+position: absolute;
+left: -1.5px;
 }
 
 /*Clock Starts */

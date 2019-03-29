@@ -188,9 +188,17 @@ li, #output, #source{
   .analog-clock{
     visibility: hidden;
   }
+  #about-button{
+    max-width: 100px;
+    margin-left: 150px;
+    transition: all 0.5s;
+  }
+  #about{
+    max-width: 400px;
+  }
   #currency-div{
     margin-left: 0px;
-    margin-top: 50px;
+    margin-top: 10px;
     position: relative;
     z-index: 6;
   }
@@ -202,22 +210,35 @@ li, #output, #source{
 
   #user-login {
     position: relative;
-    margin-top: 50px;
-
-  }
-
-  /* #main {
-    margin-top: 100px;
-    margin-left: 200px;
-    max-width: 800px;
-    padding: 10px;
-    width: 50%;
+    top: 0%;
+    left: 0%;
+    margin-top: 0px;
+    margin-left:0px;
+    padding: 20px;
+    text-align:center;
+    width: auto;
     border-radius: 25px;
     border: 2px solid #73AD21;
-    padding-left: 10px;
-    z-index: 5;
-  } */
+    margin-top: 10px;
+  }
+
    #title {
-    top: -2%;
+     left: 0%;
+     top: 0%;
+     margin-left: 0px;
+     position: relative;
+     text-align: center;
+     padding-left: 0px;
+     padding-right: 0px;
+     text-shadow: 0 0 3px #FF0000;
+     box-shadow: 8px 8px 8px silver;
+     padding-top: 4px;
+  }
+
+  .footer {
+    height:40px;
+    margin-top:-40px;
+    position: absolute;
+    left: -1.5px;
   }
 }

@@ -24,6 +24,7 @@ const baseSpan = document.getElementById('base-span')
 const convertSpan = document.getElementById('convert-span')
 const flagDiv = document.getElementById('flag-div')
 const sideBar = document.getElementById('sidebar')
+const footer = document.getElementById('footer')
 
 // const currencyDate = document.getElementById('date')
 userForm.addEventListener('submit', (ev)=> {
@@ -34,6 +35,7 @@ userForm.addEventListener('submit', (ev)=> {
   sidebar.classList.remove('hidden')
   userLogin.classList.add('hidden')
   flagDiv.classList.add('hidden')
+  footer.classList.add('hidden')
   fetch( baseURL + '/users', {
     method: "POST",
     headers:{

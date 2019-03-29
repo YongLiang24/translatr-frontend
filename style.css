@@ -73,7 +73,7 @@ body {
   max-width: 250px;
 }
 .footer {
-bottom: 0;
+bottom: 0px;
 width: 100%;
 text-align: center;
 background-color: white;
@@ -240,8 +240,11 @@ li, #output, #source{
   .footer {
     height:40px;
     margin-top:-40px;
-    position: absolute;
+    position: relative;
     left: -1.5px;
+    bottom: -70px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
   }
   /*Home page changes end  */
 

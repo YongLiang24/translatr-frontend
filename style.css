@@ -73,12 +73,15 @@ body {
   max-width: 250px;
 }
 .footer {
-position: fixed;
-bottom: 0;
+bottom: 0px;
 width: 100%;
 text-align: center;
 background-color: white;
 z-index: 5;
+height:40px;
+margin-top:-40px;
+position: absolute;
+left: -1.5px;
 }
 
 /*Clock Starts */
@@ -237,11 +240,13 @@ li, #output, #source{
   .footer {
     height:40px;
     margin-top:-40px;
-    position: absolute;
+    position: relative;
+    width: 100%;
     left: -1.5px;
+    bottom: -50px;
+    border-radius: 25px;
   }
   /*Home page changes end  */
-
   /*login page changes start */
   .sidenav {
     position: relative;
@@ -253,6 +258,5 @@ li, #output, #source{
     margin-left: 0px;
     width: 100%;
     position: relative;
-
   }
 }

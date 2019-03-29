@@ -241,10 +241,10 @@ li, #output, #source{
     height:40px;
     margin-top:-40px;
     position: relative;
+    width: 100%;
     left: -1.5px;
     bottom: -70px;
     border-radius: 25px;
-    border: 2px solid #73AD21;
   }
   /*Home page changes end  */
 
@@ -259,6 +259,5 @@ li, #output, #source{
     margin-left: 0px;
     width: 100%;
     position: relative;
-
   }
 }

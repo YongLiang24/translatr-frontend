@@ -16,7 +16,7 @@
 }
 #main {
   margin-top: 100px;
-  margin-left: 300px;
+  margin-left: 100px;
   padding: 10px;
   width: 55%;
   border-radius: 25px;
@@ -185,6 +185,7 @@ li, #output, #source{
 }
 
 @media only screen and (max-width: 1200px) {
+  /*Home page changes start  */
   .analog-clock{
     visibility: hidden;
   }
@@ -219,9 +220,8 @@ li, #output, #source{
     width: auto;
     border-radius: 25px;
     border: 2px solid #73AD21;
-    margin-top: 10px;
-  }
 
+  }
    #title {
      left: 0%;
      top: 0%;
@@ -234,11 +234,25 @@ li, #output, #source{
      box-shadow: 8px 8px 8px silver;
      padding-top: 4px;
   }
-
   .footer {
     height:40px;
     margin-top:-40px;
     position: absolute;
     left: -1.5px;
+  }
+  /*Home page changes end  */
+
+  /*login page changes start */
+  .sidenav {
+    position: relative;
+    margin-top: -100px;
+    width: auto;
+  }
+  #main {
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100%;
+    position: relative;
+
   }
 }

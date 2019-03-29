@@ -10,21 +10,12 @@
 </head>
 <body>
   <div class ="container">
-  <div id="sidebar" class="sidenav card hidden container">
-    <h2 id="user-display"></h2>
-  <form id="trip-form" class ='hidden container'>
-    <label for="trip-name"><strong>Create New Trip:</strong></label>
-    <input type="text" id="trip-name" placeholder="Name of Trip">
-    <input type="submit" name="Submit" value="Create Trip" class="btn btn-success btn-sm">
-  </form>
-  <br>
-  <ul id="trip-list">
-  </ul>
-</div>
+
 <section id="title-flag">
 <div id="title" class="card">
   <h1> Translatr </h1>
 </div>
+<br>
 <div   id="flag-div" >
   <img class="mySlides" src="images/afghan-flag-graphic.png" style="width:100%">
   <img class="mySlides" src="images/american-flag-graphic.png" style="width:100%">
@@ -68,6 +59,17 @@
   <img class="mySlides" src="images/vietnamese-flag-graphic.png" style="width:100%">
 </div>
 </section>
+<div id="sidebar" class="sidenav card hidden container">
+  <h2 id="user-display"></h2>
+<form id="trip-form" class ='hidden container'>
+  <label for="trip-name"><strong>Create New Trip:</strong></label>
+  <input type="text" id="trip-name" placeholder="Name of Trip">
+  <input type="submit" name="Submit" value="Create Trip" class="btn btn-success btn-sm">
+</form>
+<br>
+<ul id="trip-list">
+</ul>
+</div>
 <div class="card" id="user-login">
   <form id="user-form" >
   <label for="user-name">Username:</label>
@@ -79,7 +81,7 @@
     <strong> Translatr is a utility to create trips, translate common phrases you'll use on that trip, and save them to that trip as a phrasebook.</strong>
   </span>
 </div>
-
+<br>
 <div id='main' class='hidden card container'>
 <h2 id="selected-list" trip-id="0"></h2>
 <form id="translate-form">
@@ -316,7 +318,6 @@
 <audio src="audios/dropdown.mp3" id='dropdown-audio'></audio>
 <!-- <button onclick="clickAudio()" type="button">Play Audio</button> -->
 <!--sound effects ends  -->
-
 <!--flags start  -->
 <div class="footer ">
  <a target="_blank" href="https://opensource.org/licenses/MIT">MIT License</a> Created by <a target="_blank" href="https://github.com/YongLiang24"><img src="https://i.imgur.com/tXPgB2E.png" width="18px"></a>Yong Liang and <a target="_blank" href="https://github.com/LucySuddenly"><img src="https://i.imgur.com/tXPgB2E.png" width="18px"></a>Lucy Suddenly

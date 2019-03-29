@@ -23,6 +23,7 @@ const CURRENCY_URL = 'https://api.exchangeratesapi.io/latest?base='
 const baseSpan = document.getElementById('base-span')
 const convertSpan = document.getElementById('convert-span')
 const flagDiv = document.getElementById('flag-div')
+const sideBar = document.getElementById('sidebar')
 
 // const currencyDate = document.getElementById('date')
 userForm.addEventListener('submit', (ev)=> {
@@ -390,3 +391,8 @@ function carousel() {
   setTimeout(carousel, 2000);
 }
 //flag ends
+console.log(window.innerWidth);
+if(window.innerWidth < 1200){
+  console.log("checking size")
+  sideBar.classList.remove("sidenav")
+}
